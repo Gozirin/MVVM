@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable
+            name="JPBody"
+            type="com.polish.mycomments.model.jpbody.JPBody" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:padding="8dp"
+        tools:context=".ui.AddCommentsFragment">
+
+        <FrameLayout
+            android:id="@+id/add_comment_displayId"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <include layout="@layout/toolbar_detail" />
+
+            <TextView
+                android:id="@+id/add_comment_headingId"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="top|center"
+                android:fontFamily="@font/righteous"
+                android:gravity=""
+                android:text="@string/add_comments"
+                android:textColor="@color/colorWhite"
+                android:textSize="22sp" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/add_comment_recyclerview"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:visibility="gone"
+                android:layout_marginTop="43dp" />
+
+            <ProgressBar
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:visibility="invisible" />
+
+
+        </FrameLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/add_comment_titleId"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintBottom_toTopOf="@+id/add_comment_bodyId"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/add_comment_displayId"
+            app:layout_constraintVertical_bias="0.07999998"
+            android:layout_marginTop="4dp"
+            android:hint="@string/add_comment_title"
+            app:layout_constraintVertical_chainStyle="packed">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="text" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/add_comment_bodyId"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="4dp"
+            android:hint="@string/add_comment_comment"
+            app:layout_constraintBottom_toTopOf="@+id/add_comment_buttonId"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="@+id/add_comment_titleId"
+            app:layout_constraintTop_toBottomOf="@+id/add_comment_titleId">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="text"
+                />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <Button
+            android:id="@+id/add_comment_buttonId"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="4dp"
+            android:backgroundTint="@color/colorPrimaryDark"
+            android:text="@string/add_comments"
+            android:textColor="@color/colorWhite"
+            app:layout_constraintEnd_toEndOf="@+id/add_comment_titleId"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/add_comment_bodyId" />
+
+        <TextView
+            android:id="@+id/new_add_titleId"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="32dp"
+            android:textSize="18sp"
+            android:padding="4dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/add_comment_buttonId"
+            tools:text="iPhone" />
+
+        <TextView
+            android:id="@+id/new_add_bodyId"
+            android:layout_width="0dp"
+            android:padding="4dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="32dp"
+            android:textSize="18sp"
+            app:layout_constraintEnd_toEndOf="@+id/new_add_titleId"
+            app:layout_constraintStart_toStartOf="@+id/new_add_titleId"
+            app:layout_constraintTop_toBottomOf="@+id/new_add_titleId"
+            tools:text="I love iPhones; it makes my work easy" />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>
